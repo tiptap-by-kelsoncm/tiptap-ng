@@ -1,83 +1,73 @@
 <div class="tabs-container">
   <div class="language-selector">
     <label for="language-select">{{ 'common.language' | translate }}:</label>
-    <select 
+    <select
       id="language-select"
       [(ngModel)]="currentLanguage"
       (change)="setLanguage(currentLanguage)"
-      class="language-select">
-      <option *ngFor="let lang of supportedLanguages" [value]="lang">
-        {{ ('language.' + lang) | translate }}
-      </option>
+      class="language-select"
+    >
+      @for (lang of supportedLanguages; track lang) {
+        <option [value]="lang">{{ 'language.' + lang | translate }}</option>
+      }
     </select>
   </div>
 
-  <div class="tabs-header">
-    <button
-      class="tab-button"
-      [class.active]="activeTab === 'form'"
-      (click)="selectTab('form')">
-      {{ 'app.tabs.form' | translate }}
-    </button>
-    <button
-      class="tab-button"
-      [class.active]="activeTab === 'html'"
-      (click)="selectTab('html')">
-      {{ 'app.tabs.htmlPreview' | translate }}
-    </button>
-    <button
-      class="tab-button"
-      [class.active]="activeTab === 'json'"
-      (click)="selectTab('json')">
-      {{ 'app.tabs.jsonPreview' | translate }}
-    </button>
+  <div class="tabs-header" role="tablist">
+    @for (tab of ['form', 'html', 'json']; track tab) {
+      <button
+        type="button"
+        role="tab"
+        class="tab-button"
+        [class.active]="activeTab === tab"
+        [attr.aria-selected]="activeTab === tab"
+        (click)="selectTab($any(tab))"
+      >
+        {{ (tab === 'form' ? 'app.tabs.form' : tab === 'html' ? 'app.tabs.htmlPreview' : 'app.tabs.jsonPreview') | translate }}
+      </button>
+    }
   </div>
 
   <div class="tabs-content">
-    <!-- Aba Formulário -->
-    <div class="tab-pane" *ngIf="activeTab === 'form'">
-      <form [formGroup]="form" (ngSubmit)="submit()">
-        <h2>{{ 'app.editor.heading' | translate }}</h2>
-
-        <app-editor
-          formControlName="body"
-          [toolbarPreset]="'full'"
-          [minHeight]="'unset'"
-          [enableTableOfContents]="true"
-          [readonly]="false"
-          [placeholder]="'app.editor.placeholder' | translate"
-          [enableHeading]="true"
-          [enableBold]="true"
-          [enableItalic]="true"
-          [enableBalloonMenu]="true"
-          [enableCode]="true"
-          [characterMinimum]="50"
-          [characterLimit]="1000"
-          [wordMinimum]="10"
-          [wordLimit]="200"
-          [paragraphMinimum]="2"
-          [paragraphLimit]="10"
-          (jsonChange)="onJsonChange($event)"
-          (focus)="onFocus()"
-          [showFooter]="true"
-          (blur)="onBlur()">
-        </app-editor>
-
-        <button type="submit">{{ 'common.submit' | translate }}</button>
-
-      </form>
-    </div>
-
-    <!-- Aba Preview HTML -->
-    <div class="tab-pane" *ngIf="activeTab === 'html'">
-        <h3>{{ 'app.tabs.htmlPreview' | translate }}</h3>
-        <div class="preview-box" [innerHTML]="form.get('body')?.value"></div>
-    </div>
-
-    <!-- Aba Preview JSON -->
-    <div class="tab-pane" *ngIf="activeTab === 'json'">
-      <h2>{{ 'app.tabs.jsonPreview' | translate }}</h2>
-      <pre class="json-preview">{{ editorJson | json }}</pre>
-    </div>
+    @switch (activeTab) {
+      @case ('form') {
+        <div class="tab-pane" role="tabpanel">
+          <form [formGroup]="form" (ngSubmit)="submit()">
+            <h2>{{ 'app.editor.heading' | translate }}</h2>
+            <app-editor
+              formControlName="body"
+              toolbarPreset="full"
+              minHeight="200px"
+              [enableTableOfContents]="true"
+              [readonly]="false"
+              [placeholder]="'app.editor.placeholder' | translate"
+              [characterMinimum]="50"
+              [characterLimit]="1000"
+              [wordMinimum]="10"
+              [wordLimit]="200"
+              [paragraphMinimum]="2"
+              [paragraphLimit]="10"
+              [showFooter]="true"
+              (jsonChange)="onJsonChange($event)"
+              (focus)="onFocus()"
+              (blur)="onBlur()"
+            ></app-editor>
+            <button type="submit">{{ 'common.submit' | translate }}</button>
+          </form>
+        </div>
+      }
+      @case ('html') {
+        <div class="tab-pane" role="tabpanel">
+          <h3>{{ 'app.tabs.htmlPreview' | translate }}</h3>
+          <div class="preview-box" [innerHTML]="form.get('body')?.value"></div>
+        </div>
+      }
+      @case ('json') {
+        <div class="tab-pane" role="tabpanel">
+          <h2>{{ 'app.tabs.jsonPreview' | translate }}</h2>
+          <pre class="json-preview">{{ editorJson | json }}</pre>
+        </div>
+      }
+    }
   </div>
 </div>

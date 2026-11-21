@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { inject, Injectable } from '@angular/core';
+import { TranslateService, type InterpolationParameters } from '@ngx-translate/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
@@ -12,14 +12,16 @@ export class I18nService {
   private defaultLanguage = 'pt_br';
   private supportedLanguages = ['en', 'pt_br', 'es'];
 
-  constructor(private translateService: TranslateService) {
+  private readonly translateService = inject(TranslateService);
+
+  constructor() {
     this.initializeLanguage();
   }
 
   private initializeLanguage(): void {
     // Define idiomas suportados
     this.translateService.addLangs(this.supportedLanguages);
-    this.translateService.setDefaultLang(this.defaultLanguage);
+    this.translateService.setFallbackLang(this.defaultLanguage);
 
     // Detecta idioma do navegador ou usa o padrão
     const browserLanguage = this.getBrowserLanguage();
@@ -59,7 +61,7 @@ export class I18nService {
   /**
    * Traduz uma chave
    */
-  translateKey(key: string, params?: any): string {
+  translateKey(key: string, params?: InterpolationParameters): string {
     let result = '';
     this.translateService.get(key, params).subscribe((res) => {
       result = res;
@@ -70,7 +72,7 @@ export class I18nService {
   /**
    * Traduz uma chave de forma assíncrona
    */
-  translateAsync(key: string, params?: any): Observable<string> {
+  translateAsync(key: string, params?: InterpolationParameters): Observable<string> {
     return this.translateService.get(key, params);
   }
 
