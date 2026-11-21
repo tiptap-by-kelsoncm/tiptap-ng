@@ -95,3 +95,8 @@ npm test
 - O projeto usa **standalone components** (Angular 17+)
 - O CUSTOM_ELEMENTS_SCHEMA é necessário para permitir Web Components não reconhecidos pelo Angular
 - Os estilos do GOV.BR são carregados automaticamente via import no styles.scss
+
+## Editor
+
+O `<app-editor>` usa as variáveis do core (`--kt-accent`, `--kt-active-bg`...) mapeadas para as cores
+do GOV.BR em `src/app/shared/editor/editor.component.scss`.
