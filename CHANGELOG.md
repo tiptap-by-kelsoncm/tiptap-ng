@@ -2,6 +2,12 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/); versionamento [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.1.1] - 2026-11-21
+
+### Alterado
+
+- `@kelsoncm/tiptap-core` 0.15.1: instalar o tarball não dispara mais o aviso de script bloqueado do npm 12.
+
 ## [0.1.0] - 2026-11-21
 
 ### Alterado
