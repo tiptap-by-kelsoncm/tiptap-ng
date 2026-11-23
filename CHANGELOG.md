@@ -2,6 +2,13 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/); versionamento [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.1.3] - 2026-11-23
+
+### Alterado
+
+- Repositório transferido para a organização `tiptap-by-kelsoncm`: homepage, repositório e links atualizados.
+- `@kelsoncm/tiptap-core` 0.18.1 (tarball da release na organização nova): bundle UMD, opção `contentLanguage` e correções desde a 0.15.2.
+
 ## [0.1.2] - 2026-11-23
 
 ### Alterado
