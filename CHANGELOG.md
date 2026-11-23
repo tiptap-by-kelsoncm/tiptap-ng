@@ -2,6 +2,12 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/); versionamento [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.1.2] - 2026-11-23
+
+### Alterado
+
+- `@kelsoncm/tiptap-core` 0.15.2: KaTeX fixado em `^0.18.11` (compatível com `@tiptap/extension-mathematics`).
+
 ## [0.1.1] - 2026-11-21
 
 ### Alterado
