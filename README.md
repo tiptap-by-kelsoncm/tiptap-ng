@@ -1,7 +1,7 @@
 # tiptap-ng
 
 Componente Angular (`<app-editor>`) de editor de texto rico sobre o
-[@kelsoncm/tiptap-core](https://github.com/kelsoncm/tiptap-core). Integra com Reactive Forms e
+[@kelsoncm/tiptap-core](https://github.com/tiptap-by-kelsoncm/tiptap-core). Integra com Reactive Forms e
 `ngModel` (valor = HTML), traduz com ngx-translate e usa o GOV.BR Design System e Font Awesome.
 
 Os recursos (barra, balão, modos, tabelas, mídia, menções, merge fields, revisão, verificadores,
