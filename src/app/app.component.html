@@ -34,7 +34,7 @@
         <div class="tab-pane" role="tabpanel">
           <form [formGroup]="form" (ngSubmit)="submit()">
             <h2>{{ 'app.editor.heading' | translate }}</h2>
-            <app-editor
+            <kt-editor
               formControlName="body"
               toolbarPreset="full"
               minHeight="200px"
@@ -51,7 +51,7 @@
               (jsonChange)="onJsonChange($event)"
               (focus)="onFocus()"
               (blur)="onBlur()"
-            ></app-editor>
+            ></kt-editor>
             <button type="submit">{{ 'common.submit' | translate }}</button>
           </form>
         </div>

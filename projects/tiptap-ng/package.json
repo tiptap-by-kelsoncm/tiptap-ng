@@ -1,0 +1,38 @@
+{
+  "name": "@kelsoncm/tiptap-ng",
+  "version": "0.2.0",
+  "description": "Componente Angular (<kt-editor>) de editor de texto rico sobre @kelsoncm/tiptap-core, com Reactive Forms, ngModel e ngx-translate.",
+  "license": "MIT",
+  "author": "Kelson da Costa Medeiros <kelsoncm@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiptap-by-kelsoncm/tiptap-ng.git",
+    "directory": "projects/tiptap-ng"
+  },
+  "homepage": "https://tiptap-by-kelsoncm.github.io/tiptap-core/docs/angular.html",
+  "bugs": "https://github.com/tiptap-by-kelsoncm/tiptap-ng/issues",
+  "keywords": [
+    "angular",
+    "tiptap",
+    "prosemirror",
+    "wysiwyg",
+    "editor",
+    "rich-text"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^22.3.0",
+    "@angular/core": "^22.3.0",
+    "@angular/forms": "^22.3.0",
+    "@kelsoncm/tiptap-core": "^0.18.2",
+    "@ngx-translate/core": "^18.1.0",
+    "@tiptap/core": "^3.35.0",
+    "rxjs": "~7.8.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/public-api.ts"
+  }
+}

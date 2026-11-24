@@ -1,15 +1,16 @@
 {
   "name": "tiptap-ng",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Componente Angular de editor de texto rico sobre @kelsoncm/tiptap-core.",
   "private": true,
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test --watch=false",
+    "start": "ng serve demo",
+    "build": "ng build tiptap-ng && ng build demo",
+    "build:lib": "ng build tiptap-ng",
+    "watch": "ng build demo --watch --configuration development",
+    "test": "ng test tiptap-ng --watch=false",
     "lint": "ng lint"
   },
   "dependencies": {

@@ -2,6 +2,19 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/); versionamento [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.2.0] - 2026-11-23
+
+### Adicionado
+
+- Biblioteca `@kelsoncm/tiptap-ng` publicada no npm (pasta `projects/tiptap-ng`, builder `@angular/build:library`).
+- Seletor `<kt-editor>`; `<app-editor>` continua aceito.
+- Workflow `release.yml`: release com o tarball e publicação no npm por *Trusted Publishing*.
+
+### Alterado
+
+- O app de demonstração vira o projeto `demo` e importa o componente de `@kelsoncm/tiptap-ng`.
+- `src/app/shared/editor` sai do app: o código fica em `projects/tiptap-ng/src/lib`.
+
 ## [0.1.4] - 2026-11-24
 
 ### Alterado
