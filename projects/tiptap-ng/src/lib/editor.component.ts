@@ -62,11 +62,12 @@ export function cleanListParagraphs(html: string): string {
 }
 
 /**
- * `<app-editor>`: Angular wrapper of `createEditorUI` from `@kelsoncm/tiptap-core`, usable
- * with reactive forms and `ngModel` (value = HTML).
+ * `<kt-editor>`: Angular wrapper of `createEditorUI` from `@kelsoncm/tiptap-core`, usable
+ * with reactive forms and `ngModel` (value = HTML). `<app-editor>` is kept for apps written
+ * before the library existed.
  */
 @Component({
-  selector: 'app-editor',
+  selector: 'kt-editor, app-editor',
   standalone: true,
   template: '<div #host class="app-editor-host"></div>',
   styleUrl: './editor.component.scss',

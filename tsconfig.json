@@ -20,6 +20,11 @@
       "ES2022",
       "dom"
     ],
+    "paths": {
+      "@kelsoncm/tiptap-ng": [
+        "./projects/tiptap-ng/src/public-api.ts"
+      ]
+    },
     "isolatedModules": true
   },
   "angularCompilerOptions": {
@@ -27,5 +32,13 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "references": [
+    {
+      "path": "./projects/tiptap-ng/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/tiptap-ng/tsconfig.spec.json"
+    }
+  ]
 }

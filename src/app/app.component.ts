@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 import { TranslatePipe } from '@ngx-translate/core';
 import type { JSONContent } from '@tiptap/core';
 
-import { EditorComponent } from './shared/editor';
+import { EditorComponent } from '@kelsoncm/tiptap-ng';
 import { I18nService } from './shared/services/i18n.service';
 
 type Tab = 'form' | 'html' | 'json';

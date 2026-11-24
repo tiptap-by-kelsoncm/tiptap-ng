@@ -1,26 +1,33 @@
 # tiptap-ng
 
-Componente Angular (`<app-editor>`) de editor de texto rico sobre o
+Biblioteca Angular `@kelsoncm/tiptap-ng`: componente `<kt-editor>` de editor de texto rico sobre o
 [@kelsoncm/tiptap-core](https://github.com/tiptap-by-kelsoncm/tiptap-core). Integra com Reactive Forms e
 `ngModel` (valor = HTML), traduz com ngx-translate e usa o GOV.BR Design System e Font Awesome.
 
 Os recursos (barra, balão, modos, tabelas, mídia, menções, merge fields, revisão, verificadores,
-exportação...) vêm do core; este projeto é a camada Angular e um app de demonstração.
+exportação...) vêm do core; este projeto é a camada Angular (pasta `projects/tiptap-ng`) e um app de
+demonstração (pasta `src`).
 
-## Requisitos
+## Instalação
+
+```bash
+npm install @kelsoncm/tiptap-ng @kelsoncm/tiptap-core @tiptap/core @tiptap/pm @ngx-translate/core
+```
 
 - Angular 22, TypeScript 6.0, Node 22+.
-- `@kelsoncm/tiptap-core` do npm (`npm install @kelsoncm/tiptap-core @tiptap/core @tiptap/pm`).
+- CSS do core em `styles` do `angular.json`: `node_modules/@kelsoncm/tiptap-core/dist/styles/kelson-editor.css`.
+- Ícones padrão do Font Awesome (`@fortawesome/fontawesome-free`); troque com `[options]="{ renderIcon }"`.
+- O provider do ngx-translate é opcional; sem ele, o core traduz a interface sozinho.
 
 ## Uso
 
 ```ts
-import { EditorComponent } from './shared/editor';
+import { EditorComponent } from '@kelsoncm/tiptap-ng';
 
 @Component({
   imports: [ReactiveFormsModule, EditorComponent],
   template: `
-    <app-editor
+    <kt-editor
       formControlName="body"
       toolbarPreset="full"
       mode="toolbar"
@@ -29,10 +36,12 @@ import { EditorComponent } from './shared/editor';
       [mentionItems]="campos"
       [options]="{ media: { upload: enviar } }"
       (jsonChange)="json = $event"
-    ></app-editor>
+    ></kt-editor>
   `,
 })
 ```
+
+O seletor `<app-editor>` continua aceito, para apps escritos antes da biblioteca.
 
 ### Inputs
 
@@ -69,11 +78,18 @@ O idioma do ngx-translate (`pt_br`, `en`, `es`) é repassado ao core (`pt-BR`, `
 
 ```bash
 npm ci
-npm start        # http://localhost:4200
+npm start          # app de demonstração em http://localhost:4200
 npm run lint
-npm test         # Vitest (builder @angular/build:unit-test)
-npm run build
+npm test           # Vitest (builder @angular/build:unit-test)
+npm run build:lib  # biblioteca em dist/tiptap-ng
+npm run build      # biblioteca e app de demonstração
 ```
+
+## Publicação
+
+O workflow `release.yml` roda ao enviar uma tag `vX.Y.Z` (igual à versão de `package.json` e de
+`projects/tiptap-ng/package.json`): cria a release com o tarball e publica `dist/tiptap-ng` no npm com
+provenance, por *Trusted Publishing* (OIDC). O secret `NPM_TOKEN` é só reserva.
 
 ## Licença
 
