@@ -2,6 +2,12 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/); versionamento [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.1.4] - 2026-11-24
+
+### Alterado
+
+- `@kelsoncm/tiptap-core` do registro do npm (`^0.18.2`) em vez do tarball da release; sai o `allow-remote=root` do `.npmrc`.
+
 ## [0.1.3] - 2026-11-23
 
 ### Alterado

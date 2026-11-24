@@ -10,8 +10,7 @@ exportação...) vêm do core; este projeto é a camada Angular e um app de demo
 ## Requisitos
 
 - Angular 22, TypeScript 6.0, Node 22+.
-- `@kelsoncm/tiptap-core` instalado pelo tarball da release (veja `.npmrc`: `allow-remote=root`,
-  exigido pelo npm 12 para dependências por URL).
+- `@kelsoncm/tiptap-core` do npm (`npm install @kelsoncm/tiptap-core @tiptap/core @tiptap/pm`).
 
 ## Uso
 
