@@ -2,6 +2,12 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/); versionamento [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.2.2] - 2026-11-24
+
+### Removido
+
+- `NPM_TOKEN` do passo de publish: a release publica no npm só por _Trusted Publishing_ (OIDC).
+
 ## [0.2.1] - 2026-11-24
 
 ### Alterado
@@ -15,7 +21,7 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/); 
 
 - Biblioteca `@kelsoncm/tiptap-ng` publicada no npm (pasta `projects/tiptap-ng`, builder `@angular/build:library`).
 - Seletor `<kt-editor>`; `<app-editor>` continua aceito.
-- Workflow `release.yml`: release com o tarball e publicação no npm por *Trusted Publishing*.
+- Workflow `release.yml`: release com o tarball e publicação no npm por _Trusted Publishing_.
 
 ### Alterado
 

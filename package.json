@@ -1,6 +1,6 @@
 {
   "name": "tiptap-ng",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Componente Angular de editor de texto rico sobre @kelsoncm/tiptap-core.",
   "private": true,
   "license": "MIT",
