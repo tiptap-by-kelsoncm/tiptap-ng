@@ -2,6 +2,13 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/); versionamento [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.2.1] - 2026-11-24
+
+### Alterado
+
+- `@kelsoncm/tiptap-core` `^0.18.4`.
+- Primeira publicação por _Trusted Publishing_ (OIDC), que valida o trusted publisher do npm.
+
 ## [0.2.0] - 2026-11-23
 
 ### Adicionado
