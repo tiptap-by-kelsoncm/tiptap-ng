@@ -45,22 +45,22 @@ O seletor `<app-editor>` continua aceito, para apps escritos antes da biblioteca
 
 ### Inputs
 
-| Input | Padrão | Descrição |
-|---|---|---|
-| `toolbarPreset` | `full` | `minimal`, `basic` ou `full`. |
-| `mode` | `toolbar` | `toolbar`, `balloon`, `inline`, `notion`, `readonly`. |
-| `readonly` | `false` | Somente leitura (também com `control.disable()`). |
-| `placeholder` | `editor.placeholders.default` | Chave do ngx-translate ou texto. |
-| `minHeight`, `maxHeight` | `200px`, — | Altura do conteúdo. |
-| `enableBold`, `enableItalic`, `enableStrike`, `enableCode`, `enableHeading` | `true` | Botões/recursos de formatação. |
-| `enableSubscript`, `enableSuperscript`, `enableLineHeight`, `enableFontFamily`, `enableFontSize`, `enableTextColor`, `enableHighlight`, `enableTextAlign`, `enableTable`, `enablePageBreak` | `true` | Recursos opcionais do core. |
-| `enableTableOfContents` | `false` | Ids nos títulos e links no sumário. |
-| `enableBalloonMenu` | `true` | Balão sobre a seleção. |
-| `enableMention`, `mentionItems` | `true`, campos do edital | Menções com `@`. |
-| `showFooter` | `true` | Barra de status (contadores, limites). |
-| `characterLimit/Minimum`, `wordLimit/Minimum`, `paragraphLimit/Minimum` | — | Máximos aplicados e mínimos informados. |
-| `cleanListParagraphs` | `true` | Salva `<li>texto</li>` (sem `<p>`), como a versão anterior. |
-| `options` | `{}` | Qualquer opção do `createEditorUI` do core (mídia, revisão, verificadores, plugins...). |
+| Input                                                                                                                                                                                       | Padrão                        | Descrição                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- | --------------------------------------------------------------------------------------- |
+| `toolbarPreset`                                                                                                                                                                             | `full`                        | `minimal`, `basic` ou `full`.                                                           |
+| `mode`                                                                                                                                                                                      | `toolbar`                     | `toolbar`, `balloon`, `inline`, `notion`, `readonly`.                                   |
+| `readonly`                                                                                                                                                                                  | `false`                       | Somente leitura (também com `control.disable()`).                                       |
+| `placeholder`                                                                                                                                                                               | `editor.placeholders.default` | Chave do ngx-translate ou texto.                                                        |
+| `minHeight`, `maxHeight`                                                                                                                                                                    | `200px`, —                    | Altura do conteúdo.                                                                     |
+| `enableBold`, `enableItalic`, `enableStrike`, `enableCode`, `enableHeading`                                                                                                                 | `true`                        | Botões/recursos de formatação.                                                          |
+| `enableSubscript`, `enableSuperscript`, `enableLineHeight`, `enableFontFamily`, `enableFontSize`, `enableTextColor`, `enableHighlight`, `enableTextAlign`, `enableTable`, `enablePageBreak` | `true`                        | Recursos opcionais do core.                                                             |
+| `enableTableOfContents`                                                                                                                                                                     | `false`                       | Ids nos títulos e links no sumário.                                                     |
+| `enableBalloonMenu`                                                                                                                                                                         | `true`                        | Balão sobre a seleção.                                                                  |
+| `enableMention`, `mentionItems`                                                                                                                                                             | `true`, campos do edital      | Menções com `@`.                                                                        |
+| `showFooter`                                                                                                                                                                                | `true`                        | Barra de status (contadores, limites).                                                  |
+| `characterLimit/Minimum`, `wordLimit/Minimum`, `paragraphLimit/Minimum`                                                                                                                     | —                             | Máximos aplicados e mínimos informados.                                                 |
+| `cleanListParagraphs`                                                                                                                                                                       | `true`                        | Salva `<li>texto</li>` (sem `<p>`), como a versão anterior.                             |
+| `options`                                                                                                                                                                                   | `{}`                          | Qualquer opção do `createEditorUI` do core (mídia, revisão, verificadores, plugins...). |
 
 Mudar `mode` ou `readonly` não recria o editor; os demais inputs recriam mantendo o conteúdo.
 
@@ -89,7 +89,7 @@ npm run build      # biblioteca e app de demonstração
 
 O workflow `release.yml` roda ao enviar uma tag `vX.Y.Z` (igual à versão de `package.json` e de
 `projects/tiptap-ng/package.json`): cria a release com o tarball e publica `dist/tiptap-ng` no npm com
-provenance, por *Trusted Publishing* (OIDC). O secret `NPM_TOKEN` é só reserva.
+provenance, por _Trusted Publishing_ (OIDC). Não há token de npm guardado no repositório.
 
 ## Licença
 
